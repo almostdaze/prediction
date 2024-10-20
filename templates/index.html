@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Salary Prediction
+    </title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            color: aliceblue;
+            background-color: blue;
+        }
+
+        input {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Salary Prediction</h1>
+    <div>
+        <form method="post" action="/predict">
+            <input type="number" name="job_type" placeholder="Job Type" autocomplete="off" required><br>
+            <input type="number" name="age" placeholder="Age" autocomplete="off" required><br>
+            <input type="number" name="experience" placeholder="Experience (Years)" autocomplete="off" required><br>
+            <input type="number" name="education" placeholder="Education Level" autocomplete="off" required><br>
+            <div>
+                <button type="submit">Predict Salary</button>
+                <a href="/">Reset</a>
+            </div>
+        </form>
+    </div>
+    <div>
+        {% if prediction %}
+        <h2>Predicted Salary: {{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+
+</html>
