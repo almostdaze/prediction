@@ -34,10 +34,9 @@ lr_predictions = lr_model.predict(X_test)
 print("Random Forest MSE:", mean_absolute_error(y_test, rf_predictions))
 print("Linear Regression MSE:", mean_absolute_error(y_test, lr_predictions))
 
-# Choose the Random Forest model (you can choose any model) and save it
+# Choose the Random Forest model  and save it
 with open('salary_prediction_model.pkl', 'wb') as f:
     pickle.dump(rf_model, f)
 
-# If you want to use the linear regression model instead, save lr_model similarly:
 # with open('salary_prediction_model.pkl', 'wb') as f:
 #     pickle.dump(lr_model, f)
